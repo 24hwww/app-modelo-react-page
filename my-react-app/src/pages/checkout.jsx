@@ -1,7 +1,6 @@
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonMenuButton  } from '@ionic/react';
-import { Link } from "react-router-dom";
 
-export default function Home({title}) {
+export default function Checkout({title}) {
   return (
         <>
         <IonHeader className="ion-no-border app-header">
@@ -14,7 +13,7 @@ export default function Home({title}) {
 
         </IonToolbar>
         </IonHeader>
-        <IonContent>Main View Content<Link to="/">back to app</Link></IonContent>
+        <IonContent>Checkout</IonContent>
         </>
   );
 }
