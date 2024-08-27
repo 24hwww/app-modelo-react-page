@@ -6,9 +6,9 @@ export default function Home({title}) {
         <>
         <IonHeader className="ion-no-border app-header">
         <IonToolbar>
-        <IonTitle>{title}</IonTitle>
+        <IonTitle>Inicio</IonTitle>
 
-        <IonButtons slot="start">
+        <IonButtons slot="end">
             <IonMenuButton auto-hide="true"></IonMenuButton>
         </IonButtons>
 
