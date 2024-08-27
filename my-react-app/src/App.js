@@ -29,13 +29,14 @@ const router = createBrowserRouter([
 function Init() {
 
   useEffect(() => {
-    const handleBackButton = () => {
+    const handleBackButton = (event) => {
       const canGoBack = window.history.length > 1;
       if (canGoBack) {
         window.history.back();
       } else {
         App.exitApp(); // O cualquier otra acción que desees tomar
       }
+      event.preventDefault();
     };
 
     App.addListener('backButton', handleBackButton);
