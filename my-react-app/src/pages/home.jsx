@@ -1,26 +1,80 @@
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonMenuButton, IonGrid, IonRow, IonCol  } from '@ionic/react';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton, IonIcon, IonMenuToggle } from '@ionic/react';
+import { IonItem, IonAvatar, IonLabel, IonText  } from '@ionic/react';
+import { notifications } from 'ionicons/icons';
 
-import { IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonChip  } from '@ionic/react';
+import { IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonChip, IonGrid, IonRow, IonCol  } from '@ionic/react';
 
-//import { Link } from "react-router-dom";
+import {
+  IonRefresher,
+  IonRefresherContent,
+  RefresherEventDetail,
+} from '@ionic/react';
 
-export default function Home({title}) {
+import { Link } from "react-router-dom";
+
+async function updateAlert() {
+  /**
+   * Open the menu by side
+   * We can refer to the menu by side
+   * here because only one "end" menu exists
+   */
+  //await menuController.open('end');
+}
+
+const Avatar = () => {
+  return (
+      <IonItem slot="start" lines="none">
+        <IonAvatar slot="start">
+          <img alt="Avatar" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </IonAvatar>
+        <IonLabel>
+        <strong>Usuario</strong><br />
+        <IonText>Desconectado</IonText>
+        </IonLabel>
+      </IonItem>
+  );
+};
+
+export default function Home() {
+
+  function handleRefresh(event: RefresherEventDetail) {
+    setTimeout(() => {
+      // Any calls to load data go here
+      event.detail.complete();
+    }, 2000);
+  }
+
   return (
         <>
         <IonHeader className="ion-no-border app-header">
         <IonToolbar>
-        <IonTitle>Inicio</IonTitle>
+        <Avatar/>
 
         <IonButtons slot="end">
-            <IonMenuButton auto-hide="true"></IonMenuButton>
+          <IonMenuToggle auto-hide="false">
+            <IonButton onClick={updateAlert}>
+            <IonIcon slot="icon-only" icon={notifications}></IonIcon>
+            </IonButton>
+          </IonMenuToggle>
         </IonButtons>
 
         </IonToolbar>
+        <IonToolbar>
+
+        <IonTitle>...</IonTitle>
+
+        </IonToolbar>
         </IonHeader>
-        <IonContent>
+        <IonContent className="ion-padding">
         
+
+        <IonRefresher slot="fixed" onIonRefresh={handleRefresh}>
+          <IonRefresherContent>
+          </IonRefresherContent>
+        </IonRefresher>
+
           <IonGrid>
-            <IonRow>
+          <IonRow>
               <IonCol>
                 
               <IonCard>
@@ -38,6 +92,8 @@ export default function Home({title}) {
 
             <IonRow>
               <IonCol>
+
+                <Link className="no-underline" to="/productos">
                 <IonCard>
                   <IonCardHeader>
                     <IonCardSubtitle><IonChip>Productos</IonChip></IonCardSubtitle>
@@ -45,7 +101,9 @@ export default function Home({title}) {
                   </IonCardHeader>
 
                   <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
-                </IonCard>                
+                </IonCard>  
+                </Link>
+
               </IonCol>
               <IonCol>
               <IonCard>
@@ -59,8 +117,12 @@ export default function Home({title}) {
               </IonCol>
             </IonRow>
 
-          </IonGrid>       
-        
+
+        </IonGrid>
+
+
+
+
         </IonContent>
         </>
   );
