@@ -6,8 +6,7 @@ import { IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, 
 
 import {
   IonRefresher,
-  IonRefresherContent,
-  RefresherEventDetail,
+  IonRefresherContent
 } from '@ionic/react';
 
 import { Link } from "react-router-dom";
@@ -37,7 +36,7 @@ const Avatar = () => {
 
 export default function Home() {
 
-  function handleRefresh(event: RefresherEventDetail) {
+  function handleRefresh(event) {
     setTimeout(() => {
       // Any calls to load data go here
       event.detail.complete();
@@ -119,9 +118,6 @@ export default function Home() {
 
 
         </IonGrid>
-
-
-
 
         </IonContent>
         </>

@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "eslint-plugin-react": "^7.35.0",
     "wrangler": "^3.72.1"
   }
 }
