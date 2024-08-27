@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { IonMenu, IonHeader, IonToolbar, IonTitle, IonContent  } from '@ionic/react';
 
 
-import { IonItem, IonIcon, IonLabel  } from '@ionic/react';
+import { IonItem, IonLabel  } from '@ionic/react';
 
 import { Outlet } from "react-router-dom";
 

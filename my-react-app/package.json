@@ -26,6 +26,14 @@
     "preview": "npm run build && wrangler pages dev ./build"
   },
   "eslintConfig": {
+    "rules":{
+    "no-unused-vars" : [
+      "warn",{
+      "argsIgnorePattern": "^_",
+      "varsIgnorePattern": "^_"
+      }
+    ]
+    },
     "extends": [
       "react-app",
       "react-app/jest"
