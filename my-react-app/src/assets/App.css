@@ -1,7 +1,10 @@
-.ion-page{width:100%}
+.ion-page{width:100%;height:100dvh;overflow: auto;}
 .App {
   text-align: center;
 }
+ion-grid {height: 100%;}
+ion-content {height: 100%;}
+
 
 .App-logo {
   height: 40vmin;

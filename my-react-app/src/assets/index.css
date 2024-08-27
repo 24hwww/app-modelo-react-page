@@ -9,3 +9,5 @@ body {
 .ion-page{width:100%}
 code {font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',monospace;}
 .no-underline{text-decoration:none;}
+.ion-page {display: flex;flex-direction: column;height: 100dvh;}
+ion-content {flex: 1;overflow: auto;}

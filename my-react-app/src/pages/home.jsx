@@ -64,7 +64,7 @@ export default function Home() {
 
         </IonToolbar>
         </IonHeader>
-        <IonContent className="ion-padding">
+        <IonContent color="dark" fullscreen={true} className="ion-padding">
         
 
         <IonRefresher slot="fixed" onIonRefresh={handleRefresh}>
