@@ -116,7 +116,6 @@ export default function Home() {
               </IonCol>
             </IonRow>
 
-
         </IonGrid>
 
         </IonContent>
