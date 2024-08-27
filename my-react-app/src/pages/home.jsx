@@ -60,7 +60,7 @@ export default function Home() {
         </IonToolbar>
         <IonToolbar>
 
-        <IonTitle>...</IonTitle>
+        <IonTitle>Inicio</IonTitle>
 
         </IonToolbar>
         </IonHeader>
