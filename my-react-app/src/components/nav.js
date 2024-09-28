@@ -3,9 +3,11 @@ import { useState, useEffect } from "react";
 import { IonMenu, IonHeader, IonToolbar, IonTitle, IonContent  } from '@ionic/react';
 
 
-import { IonItem, IonLabel  } from '@ionic/react';
+import { IonItem, IonLabel, IonNav } from '@ionic/react';
 
 import { Outlet } from "react-router-dom";
+
+
 
 export default function Nav() {
   const [items, setItems] = useState([
@@ -49,7 +51,7 @@ useEffect(() => {
       </IonContent>
     </IonMenu>
 
-    <div className="ion-page" id="main"><Outlet /></div>
+    <div className="ion-page" id="main"><IonNav root={() => <Outlet />}></IonNav></div>
     </>
   );
 }

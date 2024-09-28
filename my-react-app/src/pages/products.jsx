@@ -1,6 +1,6 @@
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton, IonIcon, IonMenuToggle  } from '@ionic/react';
+import { IonBackButton, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton, IonIcon, IonMenuToggle  } from '@ionic/react';
 
-import { arrowBack, notifications } from 'ionicons/icons';
+import { notifications } from 'ionicons/icons';
 
 async function updateAlert() {
   /**
@@ -18,9 +18,7 @@ export default function Products() {
         <IonToolbar>
 
         <IonButtons slot="start">
-            <IonButton onClick={updateAlert}>
-            <IonIcon slot="icon-only" icon={arrowBack}></IonIcon>
-            </IonButton>
+        <IonBackButton defaultHref="/" />
         </IonButtons>
 
         <IonTitle>Productos</IonTitle>

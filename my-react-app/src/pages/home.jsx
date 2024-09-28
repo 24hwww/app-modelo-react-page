@@ -2,14 +2,16 @@ import { IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton, Ion
 import { IonItem, IonAvatar, IonLabel, IonText  } from '@ionic/react';
 import { notifications } from 'ionicons/icons';
 
-import { IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonChip, IonGrid, IonRow, IonCol  } from '@ionic/react';
+import { IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonChip, IonGrid, IonRow, IonCol, IonNavLink  } from '@ionic/react';
 
 import {
   IonRefresher,
   IonRefresherContent
 } from '@ionic/react';
 
-import { Link } from "react-router-dom";
+import Productos from "./products";
+
+//import { Link } from "react-router-dom";
 
 async function updateAlert() {
   /**
@@ -28,7 +30,7 @@ const Avatar = () => {
         </IonAvatar>
         <IonLabel>
         <strong>Usuario</strong><br />
-        <IonText>Desconectado</IonText>
+        <IonText color="light"><small>Desconectado</small></IonText>
         </IonLabel>
       </IonItem>
   );
@@ -83,7 +85,7 @@ export default function Home() {
                   
                 </IonCardHeader>
 
-                <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
+                <IonCardContent>...</IonCardContent>
               </IonCard>
 
               </IonCol>
@@ -92,16 +94,16 @@ export default function Home() {
             <IonRow>
               <IonCol>
 
-                <Link className="no-underline" to="/productos">
-                <IonCard>
+              <IonNavLink routerDirection="forward" component={() => <Productos />}>
+                <IonCard button={true} href="/productos">
                   <IonCardHeader>
                     <IonCardSubtitle><IonChip>Productos</IonChip></IonCardSubtitle>
                     <IonCardTitle>1.365</IonCardTitle>
                   </IonCardHeader>
 
-                  <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
+                  <IonCardContent>...</IonCardContent>
                 </IonCard>  
-                </Link>
+                </IonNavLink>
 
               </IonCol>
               <IonCol>
@@ -111,13 +113,29 @@ export default function Home() {
                     <IonCardTitle>234</IonCardTitle>
                   </IonCardHeader>
 
-                  <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
+                  <IonCardContent>...</IonCardContent>
                 </IonCard>      
               </IonCol>
             </IonRow>
 
-        </IonGrid>
+            <IonRow>
+              <IonCol>
+                
+              <IonCard>
+                <IonCardHeader>
+                  <IonCardSubtitle><IonChip>Carrito</IonChip></IonCardSubtitle>
+                  <IonCardTitle>8 Producto(s)</IonCardTitle>
+                  
+                </IonCardHeader>
 
+                <IonCardContent>...</IonCardContent>
+              </IonCard>
+
+              </IonCol>
+            </IonRow>
+
+
+        </IonGrid>
         </IonContent>
         </>
   );
